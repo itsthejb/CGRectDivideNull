@@ -6,10 +6,12 @@
 //  Copyright (c) 2014 Jonathan Crooke. All rights reserved.
 //
 
+#import <AppKit/AppKit.h>
 #import <XCTest/XCTest.h>
 #import "CGRectDivideNull.h"
 
 @interface CGRectDivideNullTests : XCTestCase
+@property (strong) NSView *view;
 @property (assign) CGRect sourceRect;
 @property (assign) CGRect destination;
 @property (assign) CGRect slice;
@@ -45,11 +47,18 @@
   XCTAssertEqual(self.slice, CGRectZero, @"Not correct destionation rect");
 }
 
+- (void) testShouldBeAbleToSliceViewFrameDirectly
+{
+  CGRectDivideNull(self.view.frame, &_destination, NULL, 2.5, CGRectMinYEdge);
+  XCTAssertEqual(self.destination, CGRectMake(1, 10, 50, 2.5), @"Not correct destionation rect");
+}
+
 #pragma mark -
 
 - (void)setUp
 {
   self.sourceRect = CGRectMake(1, 10, 50, 100);
+  self.view = [[NSView alloc] initWithFrame:self.sourceRect];
 }
 
 @end

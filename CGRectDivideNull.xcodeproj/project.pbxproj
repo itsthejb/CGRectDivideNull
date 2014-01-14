@@ -38,6 +38,7 @@
 		494AB40C1885409B00551E10 /* CGRectDivideNullTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CGRectDivideNullTests.m; sourceTree = "<group>"; };
 		494AB416188545CB00551E10 /* CGRectDivideNull.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CGRectDivideNull.podspec; sourceTree = "<group>"; };
 		494AB417188545D300551E10 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		494AB4181885469F00551E10 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,12 +66,13 @@
 		494AB3E31885409B00551E10 = {
 			isa = PBXGroup;
 			children = (
-				494AB417188545D300551E10 /* README.md */,
-				494AB416188545CB00551E10 /* CGRectDivideNull.podspec */,
 				494AB3F51885409B00551E10 /* CGRectDivideNull */,
 				494AB4061885409B00551E10 /* CGRectDivideNullTests */,
 				494AB3EE1885409B00551E10 /* Frameworks */,
 				494AB3ED1885409B00551E10 /* Products */,
+				494AB417188545D300551E10 /* README.md */,
+				494AB4181885469F00551E10 /* LICENSE */,
+				494AB416188545CB00551E10 /* CGRectDivideNull.podspec */,
 			);
 			sourceTree = "<group>";
 		};
@@ -374,6 +376,7 @@
 				494AB4121885409B00551E10 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		494AB4131885409B00551E10 /* Build configuration list for PBXNativeTarget "CGRectDivideNullTests" */ = {
 			isa = XCConfigurationList;
@@ -382,6 +385,7 @@
 				494AB4151885409B00551E10 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
