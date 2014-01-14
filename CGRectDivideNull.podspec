@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
   s.source        = { :git => "https://github.com/itsthejb/CGRectDivideNull.git", :tag => "v" + s.version.to_s }
   s.ios.deployment_target = '2.0'
   s.osx.deployment_target = '10.4'
-  s.source_files  = s.name + '/*.{h,m}'
+  s.source_files  = s.name + '/*.{h,c}'
   s.frameworks    = 'CoreGraphics'
   s.requires_arc  = false
 end
