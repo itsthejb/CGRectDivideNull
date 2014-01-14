@@ -7,28 +7,49 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "CGRectDivideNull.h"
 
 @interface CGRectDivideNullTests : XCTestCase
-
+@property (assign) CGRect sourceRect;
+@property (assign) CGRect destination;
+@property (assign) CGRect slice;
 @end
 
 @implementation CGRectDivideNullTests
 
+- (void) testShouldUseANormalCase
+{
+  CGRectDivideNull(self.sourceRect, &_destination, &_slice, 25.5, CGRectMinXEdge);
+  XCTAssertEqual(self.destination, CGRectMake(1, 10, 25.5, 100), @"Not correct destionation rect");
+  XCTAssertEqual(self.slice, CGRectMake(26.5, 10, 24.5, 100), @"Not correct destionation rect");
+}
+
+- (void) testShouldAllowANullRemainder
+{
+  CGRectDivideNull(self.sourceRect, &_destination, NULL, 25.5, CGRectMinXEdge);
+  XCTAssertEqual(self.destination, CGRectMake(1, 10, 25.5, 100), @"Not correct destionation rect");
+  XCTAssertEqual(self.slice, CGRectZero, @"Not correct destionation rect");
+}
+
+- (void) testShouldAllowANullSlice
+{
+  CGRectDivideNull(self.sourceRect, NULL, &_slice, 25.5, CGRectMinXEdge);
+  XCTAssertEqual(self.destination, CGRectZero, @"Not correct destionation rect");
+  XCTAssertEqual(self.slice, CGRectMake(26.5, 10, 24.5, 100), @"Not correct destionation rect");
+}
+
+- (void) testShouldAllowANullSliceAndRemainder
+{
+  CGRectDivideNull(self.sourceRect, NULL, NULL, 25.5, CGRectMinXEdge);
+  XCTAssertEqual(self.destination, CGRectZero, @"Not correct destionation rect");
+  XCTAssertEqual(self.slice, CGRectZero, @"Not correct destionation rect");
+}
+
+#pragma mark -
+
 - (void)setUp
 {
-    [super setUp];
-    // Put setup code here. This method is called before the invocation of each test method in the class.
-}
-
-- (void)tearDown
-{
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
-    [super tearDown];
-}
-
-- (void)testExample
-{
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+  self.sourceRect = CGRectMake(1, 10, 50, 100);
 }
 
 @end
