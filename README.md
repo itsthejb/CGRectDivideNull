@@ -27,9 +27,13 @@ That is all!
 
 ##Version history
 
+**v0.0.2**
+
+* Essential podspec fix
+
 **v0.0.1**
 
-Initial release.
+* Initial release.
 
 Have fun!
 ---------

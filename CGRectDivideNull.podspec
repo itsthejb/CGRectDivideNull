@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name          = "CGRectDivideNull"
-  s.version       = "0.0.1"
+  s.version       = "0.0.2"
   s.summary       = "A more convenient CGRectDivide()"
   s.description   = "Allow NULL parameters to CGRectDivide()"
   s.homepage      = "https://github.com/itsthejb/CGRectDivideNull"
